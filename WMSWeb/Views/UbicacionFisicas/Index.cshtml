@@ -1,0 +1,143 @@
+﻿@model IEnumerable<WMSWeb.Models.UbicacionFisica>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Hilera)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Columna)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nivel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Calle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodEstado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlujoPicking)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoUm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CapacidadUm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CapacidadVolumen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoUbicacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UltimaFechaConteo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Largo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ancho)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UbicacionReposicion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AreaPicking)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoLpn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodAlmacenNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hilera)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Columna)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nivel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Calle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodEstado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlujoPicking)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoUm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CapacidadUm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CapacidadVolumen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoUbicacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UltimaFechaConteo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Largo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ancho)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UbicacionReposicion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AreaPicking)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoLpn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cod.CodZona)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodAlmacenNavigation.CodAlmacen)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

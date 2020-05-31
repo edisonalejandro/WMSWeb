@@ -1,0 +1,117 @@
+﻿@model WMSWeb.Models.UbicacionFisica
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>UbicacionFisica</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CodUbicacion" />
+            <input type="hidden" asp-for="CodAlmacen" />
+            <div class="form-group">
+                <label asp-for="Hilera" class="control-label"></label>
+                <input asp-for="Hilera" class="form-control" />
+                <span asp-validation-for="Hilera" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Columna" class="control-label"></label>
+                <input asp-for="Columna" class="form-control" />
+                <span asp-validation-for="Columna" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nivel" class="control-label"></label>
+                <input asp-for="Nivel" class="form-control" />
+                <span asp-validation-for="Nivel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Calle" class="control-label"></label>
+                <input asp-for="Calle" class="form-control" />
+                <span asp-validation-for="Calle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodEstado" class="control-label"></label>
+                <input asp-for="CodEstado" class="form-control" />
+                <span asp-validation-for="CodEstado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodZona" class="control-label"></label>
+                <select asp-for="CodZona" class="form-control" asp-items="ViewBag.CodZona"></select>
+                <span asp-validation-for="CodZona" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FlujoPicking" class="control-label"></label>
+                <input asp-for="FlujoPicking" class="form-control" />
+                <span asp-validation-for="FlujoPicking" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoUm" class="control-label"></label>
+                <input asp-for="TipoUm" class="form-control" />
+                <span asp-validation-for="TipoUm" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CapacidadUm" class="control-label"></label>
+                <input asp-for="CapacidadUm" class="form-control" />
+                <span asp-validation-for="CapacidadUm" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CapacidadVolumen" class="control-label"></label>
+                <input asp-for="CapacidadVolumen" class="form-control" />
+                <span asp-validation-for="CapacidadVolumen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoUbicacion" class="control-label"></label>
+                <input asp-for="TipoUbicacion" class="form-control" />
+                <span asp-validation-for="TipoUbicacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UltimaFechaConteo" class="control-label"></label>
+                <input asp-for="UltimaFechaConteo" class="form-control" />
+                <span asp-validation-for="UltimaFechaConteo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Largo" class="control-label"></label>
+                <input asp-for="Largo" class="form-control" />
+                <span asp-validation-for="Largo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ancho" class="control-label"></label>
+                <input asp-for="Ancho" class="form-control" />
+                <span asp-validation-for="Ancho" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alto" class="control-label"></label>
+                <input asp-for="Alto" class="form-control" />
+                <span asp-validation-for="Alto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UbicacionReposicion" class="control-label"></label>
+                <input asp-for="UbicacionReposicion" class="form-control" />
+                <span asp-validation-for="UbicacionReposicion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AreaPicking" class="control-label"></label>
+                <input asp-for="AreaPicking" class="form-control" />
+                <span asp-validation-for="AreaPicking" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoLpn" class="control-label"></label>
+                <input asp-for="TipoLpn" class="form-control" />
+                <span asp-validation-for="TipoLpn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

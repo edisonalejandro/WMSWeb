@@ -1,0 +1,62 @@
+﻿@model WMSWeb.Models.Usuario
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Usuario</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CodUsuario" />
+            <input type="hidden" asp-for="CodAlmacen" />
+            <div class="form-group">
+                <label asp-for="Clave" class="control-label"></label>
+                <input asp-for="Clave" class="form-control" />
+                <span asp-validation-for="Clave" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomUsuario" class="control-label"></label>
+                <input asp-for="NomUsuario" class="form-control" />
+                <span asp-validation-for="NomUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rut" class="control-label"></label>
+                <input asp-for="Rut" class="form-control" />
+                <span asp-validation-for="Rut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                <input asp-for="Estado" class="form-control" />
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodZona" class="control-label"></label>
+                <input asp-for="CodZona" class="form-control" />
+                <span asp-validation-for="CodZona" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AreaPicking" class="control-label"></label>
+                <input asp-for="AreaPicking" class="form-control" />
+                <span asp-validation-for="AreaPicking" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dispositivo" class="control-label"></label>
+                <input asp-for="Dispositivo" class="form-control" />
+                <span asp-validation-for="Dispositivo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
