@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace WMSWeb.Models
+﻿namespace WMSWeb.Models
 {
     public partial class UnidadMedida
     {

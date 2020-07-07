@@ -1,0 +1,58 @@
+﻿@model IEnumerable<WMSWeb.Models.Almacen>
+
+@{
+    ViewData["Title"] = "Index";
+}
+    <h1 class="display-4"><i class="fas fa-warehouse"></i> Listado de Almacenes</h1>
+
+<p>
+    <a asp-action="Create"><i class="icono derecha fas fa-plus-square"></i> Crear Almacén</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomAlmacen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Representante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Direccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ciudad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fono)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomAlmacen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Representante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ciudad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fono)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CodAlmacen">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.CodAlmacen">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.CodAlmacen">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

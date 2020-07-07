@@ -1,0 +1,129 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fff;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 18px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+.btn-menu {
+    display: none;
+    padding: 10px;
+    background: #494950;
+    color: #fff;
+}
+
+.btn-menu .icono {
+    float: right;
+}
+
+.btn-menu a {
+    text-decoration-line: none;
+}
+
+.btn-menu a:hover {
+    text-decoration-line: none;
+}
+
+.container-menu {
+    width: 20%;
+    min-width: 250px;
+    display: inline-block;
+    line-height: 18px;
+    text-decoration: none;
+}
+
+.container-menu .menu {
+    width: 100%;
+}
+
+.container-menu .submenu {
+    background: #494949;
+    margin-left: 1px;
+}
+
+.container-menu ul {
+    list-style: none;
+}
+
+.container-menu .menu li a {
+    color: #494949;
+    display: block;
+    padding: 10px 20px;
+    background: #cecece;
+}
+
+.container-menu .menu li a:hover {
+    background: #1a95d5;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.container-menu .icono {
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.container-menu .icono.izquierda {
+    float: left;
+    margin-right: 10px;
+}
+
+.container-menu .icono.derecha {
+    float: right;
+    margin-left: 10px;
+}
+
+.container-menu .menu ul {
+    /*display: none;*/
+}
+
+.container-menu .menu ul li a {
+    background: #a1a0a0;
+    color: #000;
+    margin-left: 30px;
+}
+
+    .container-menu .submenu ul li a {
+        background: #757474;
+        color: #000;
+        margin-left: 30px;
+        display: none;
+    }
+
+
+.container-menu .menu .activado>a {
+    background: #1f5d7e;
+    color: #fff;
+}
+
+@media screen and (max-width: 450px) {
+    body {
+        padding-top: 80px;
+    }
+    .container-menu {
+        margin: 0;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+    }
+    .btn-menu {
+        display: block;
+    }
+    .container-menu .menu {
+        /* display: none;*/
+    }
+}

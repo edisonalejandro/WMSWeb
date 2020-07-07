@@ -1,0 +1,49 @@
+﻿@*
+    Página de login: EAR 09-06/2020
+*@
+@{
+}
+@model Usuario
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] Login - Essential WMS</title>
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <link rel="stylesheet" href="~/css/login.css" />
+</head>
+<body class="hidden">
+    @*<div class="centrado">
+        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>*@
+
+    <div class="login-box">
+        @using (Html.BeginForm("ValidarUsuario", "Usuarios", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <img src="~/img/Logo1.jpg" class="avatar" alt="Avatar Image">
+            <h1>Essential WMS</h1>
+            <h2>Iniciar Sesión</h2>
+            @*<form action="Login/ValidarUsuario" method="post">*@
+                <!-- USERNAME INPUT -->
+                <label for="username">Usuario</label>
+                <input type="text" class="form-control" id="usr" name="usr" placeholder="Nombre" required>
+                @* @Html.TextBoxFor(x => x.CodUsuario,
+                new { @class = "form-control", name="usr", placeholder = "Nombre", autofocus = "autofocus" })
+                @Html.ValidationMessageFor(x => x.CodUsuario, null, new { @class = "text-danger" })*@
+                <!-- PASSWORD INPUT -->
+                <label for="password">Constraseña</label>
+                <input type="text" class="form-control" id="pwd" name="pwd" placeholder="Password" required> 
+                @*@Html.TextBoxFor(x => x.Clave,
+                new { @class = "form-control", name = "pwd", placeholder = "Contraseña" })
+                @Html.ValidationMessageFor(m => m.Clave, null, new { @class = "text-danger" })*@
+                <input type="submit" value="Login" />
+                <a href="#">Olvidaste tu contraseña?</a><br>
+                <a href="#">Aún no tienes cuenta?</a><br>
+            @*</form>*@
+        }
+    </div>
+</body>
+</html>

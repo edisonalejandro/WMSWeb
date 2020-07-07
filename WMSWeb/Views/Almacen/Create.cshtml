@@ -1,0 +1,61 @@
+﻿@model WMSWeb.Models.Almacen
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+    <h1><i class="fas fa-warehouse"></i> Crear Almacén</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CodAlmacen" class="control-label">Código de Almacén:</label>
+                <input asp-for="CodAlmacen" class="form-control" />
+                <span asp-validation-for="CodAlmacen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomAlmacen" class="control-label">Nombre de Almacén</label>
+                <input asp-for="NomAlmacen" class="form-control" />
+                <span asp-validation-for="NomAlmacen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Representante" class="control-label">Rerpesentante:</label>
+                <input asp-for="Representante" class="form-control" />
+                <span asp-validation-for="Representante" class="text-danger"></span>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Direccion" class="control-label">Dirección:</label>
+                <input asp-for="Direccion" class="form-control" />
+                <span asp-validation-for="Direccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ciudad" class="control-label">Ciudad:</label>
+                <input asp-for="Ciudad" class="form-control" />
+                <span asp-validation-for="Ciudad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fono" class="control-label">Fono:</label>
+                <input asp-for="Fono" class="form-control" />
+                <span asp-validation-for="Fono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            <div>
+                <a asp-action="Index">Listado de Almacenes</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+

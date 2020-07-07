@@ -1,0 +1,75 @@
+﻿@model WMSWeb.Models.Producto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="display-4"><i class="fas fa-boxes"></i> Crear Producto</h1>
+
+<hr />
+<div class="container">
+    <form asp-action="Create">
+        <div class="row">
+            <div class="col-md-4">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="CodProducto" class="control-label">Código de Producto:</label>
+                    <input asp-for="CodProducto" class="form-control" />
+                    <span asp-validation-for="CodProducto" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DescripcionCorta" class="control-label">Descripción Corta:</label>
+                    <input asp-for="DescripcionCorta" class="form-control" />
+                    <span asp-validation-for="DescripcionCorta" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DescripcionLarga" class="control-label">Descripción Larga:</label>
+                    <input asp-for="DescripcionLarga" class="form-control" />
+                    <span asp-validation-for="DescripcionLarga" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CodAlmacen" class="control-label">Código de Almacén:</label>
+                    <select asp-for="CodAlmacen" class="form-control" asp-items="ViewBag.CodAlmacen"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CodUnidadMedida" class="control-label">Unidad de Medida:</label>
+                    <input asp-for="CodUnidadMedida" class="form-control" />
+                    <span asp-validation-for="CodUnidadMedida" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+
+                <div class="form-group">
+                    <label asp-for="ValorReferencia" class="control-label">Valor Referencia:</label>
+                    <input asp-for="ValorReferencia" class="form-control" />
+                    <span asp-validation-for="ValorReferencia" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PesoTara" class="control-label">Peso/Tara:</label>
+                    <input asp-for="PesoTara" class="form-control" />
+                    <span asp-validation-for="PesoTara" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FechaUltimoConteo" class="control-label">Fecha Último Conteo:</label>
+                    <input asp-for="FechaUltimoConteo" class="form-control" />
+                    <span asp-validation-for="FechaUltimoConteo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Rotacion" class="control-label">Rotación:</label>
+                    <input asp-for="Rotacion" class="form-control" />
+                    <span asp-validation-for="Rotacion" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Crear" class="btn btn-primary" />
+                </div>
+                <div>
+                    <a asp-action="Index">Ver Listado de Productos</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+

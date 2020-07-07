@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Components.Web;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace WMSWeb.Models
 {
@@ -14,8 +16,12 @@ namespace WMSWeb.Models
             UbicacionFisica = new HashSet<UbicacionFisica>();
             Usuario = new HashSet<Usuario>();
         }
-
+        [Required(ErrorMessage = "Código de Almacén es requerido")]
+        [StringLength(3, ErrorMessage = "Logitud máxima 3")]
         public string CodAlmacen { get; set; }
+
+        [Required(ErrorMessage = "Nombre de Almacén es requerido")]
+        [StringLength(30, ErrorMessage = "Logitud máxima 30")]
         public string NomAlmacen { get; set; }
         public string Representante { get; set; }
         public string Direccion { get; set; }

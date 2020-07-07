@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using System.Threading.Tasks;
 using WMSWeb.Models;
 
 namespace WMSWeb.Controllers
@@ -12,6 +10,8 @@ namespace WMSWeb.Controllers
     public class UsuariosController : Controller
     {
         private readonly ESSENTIALWMSContext _context;
+
+
 
         public UsuariosController(ESSENTIALWMSContext context)
         {
@@ -24,7 +24,36 @@ namespace WMSWeb.Controllers
             var eSSENTIALWMSContext = _context.Usuario.Include(u => u.CodAlmacenNavigation);
             return View(await eSSENTIALWMSContext.ToListAsync());
         }
+        private readonly ESSENTIALWMSContext bd = new ESSENTIALWMSContext();
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ValidarUsuario(string usr, string pwd)
+        {
+            //user = "CARRI";
+            //pass = "12
+            var oUser = (from d in bd.Usuario
+                         where d.CodUsuario.Equals(usr)
+                         select d).FirstOrDefault();
+
+            if (usr != null)
+            {
+                if (oUser.Clave == pwd)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Login");
+                }
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
+
+        }
         // GET: Usuarios/Details/5
         public async Task<IActionResult> Details(string id)
         {
@@ -56,6 +85,7 @@ namespace WMSWeb.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        
         public async Task<IActionResult> Create([Bind("CodUsuario,CodAlmacen,Clave,NomUsuario,Rut,Estado,CodZona,AreaPicking,Dispositivo")] Usuario usuario)
         {
             if (ModelState.IsValid)
@@ -67,6 +97,8 @@ namespace WMSWeb.Controllers
             ViewData["CodAlmacen"] = new SelectList(_context.Almacen, "CodAlmacen", "CodAlmacen", usuario.CodAlmacen);
             return View(usuario);
         }
+
+
 
         // GET: Usuarios/Edit/5
         public async Task<IActionResult> Edit(string id)

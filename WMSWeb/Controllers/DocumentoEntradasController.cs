@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using WMSWeb.Models;
 
 namespace WMSWeb.Controllers
@@ -12,7 +12,7 @@ namespace WMSWeb.Controllers
     public class DocumentoEntradasController : Controller
     {
         private readonly ESSENTIALWMSContext _context;
-
+                
         public DocumentoEntradasController(ESSENTIALWMSContext context)
         {
             _context = context;
@@ -56,20 +56,45 @@ namespace WMSWeb.Controllers
         // POST: DocumentoEntradas/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("NroEntrada,CodAlmacen,NroDocEntrada,CodEstado,NroDocReferencia,CodDocEntrada,CodAlmacenOrigen,CodProveedor,Observaciones,FechaCreacion,FechaEmision,FecEstimadaRecepcion")] DocumentoEntrada documentoEntrada)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(documentoEntrada);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["CodAlmacen"] = new SelectList(_context.Almacen, "CodAlmacen", "CodAlmacen", documentoEntrada.CodAlmacen);
-            ViewData["CodProveedor"] = new SelectList(_context.Proveedor, "CodProveedor", "CodProveedor", documentoEntrada.CodProveedor);
-            return View(documentoEntrada);
-        }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Create([Bind("NroEntrada,CodAlmacen,NroDocEntrada,CodEstado,NroDocReferencia,CodDocEntrada,CodAlmacenOrigen,CodProveedor,Observaciones,FechaCreacion,FechaEmision,FecEstimadaRecepcion")] DocumentoEntrada documentoEntrada, DetalleDocEntrada detalleDocEntrada)
+        //{
+        //    /* if (ModelState.IsValid)
+        //     {
+        //         _context.Add(documentoEntrada);
+        //         await _context.SaveChangesAsync();
+        //        nameof(Index)
+        //         return RedirectToAction("Create", "DetalleDocEntrada");
+        //         _context.Database.BeginTransaction();
+        //     }
+        //     ViewData["CodAlmacen"] = new SelectList(_context.Almacen, "CodAlmacen", "CodAlmacen", documentoEntrada.CodAlmacen);
+        //     ViewData["CodProveedor"] = new SelectList(_context.Proveedor, "CodProveedor", "CodProveedor", documentoEntrada.CodProveedor);
+        //     return View(detalleDocEntrada);*/
+
+        //    var valor = false;
+        //    if (ModelState.IsValid)
+        //    {
+        //        var detalleEntradaList = 
+        //        var strategy = _context.Database.CreateExecutionStrategy();
+        //        await strategy.ExecuteAsync(async () =>
+        //        using (var transaction = _context.Database.BeginTransaction())
+        //        {
+        //            try
+        //            {
+        //                var doc1 = new DocumentoEntrada();
+        //                doc1.CodAlmacen = '';
+
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                transaction.Rollback();
+        //                valor = false;
+        //            }
+        //        });
+        //    }
+
+        //}
 
         // GET: DocumentoEntradas/Edit/5
         public async Task<IActionResult> Edit(int? id)

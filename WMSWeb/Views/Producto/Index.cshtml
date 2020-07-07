@@ -1,0 +1,137 @@
+﻿@model IEnumerable<WMSWeb.Models.Producto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CodProducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescripcionCorta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescripcionLarga)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodUnidadMedida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiasVencimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorReferencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Largo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ancho)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Volumen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PesoUnidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PesoTara)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ControlSerie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ControlLote)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaUltimoConteo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductoPeligroso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rotacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodAlmacenNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodProducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescripcionCorta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescripcionLarga)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodUnidadMedida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiasVencimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorReferencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Largo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ancho)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Volumen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PesoUnidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PesoTara)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ControlSerie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ControlLote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaUltimoConteo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductoPeligroso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rotacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodAlmacenNavigation.CodAlmacen)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdProducto">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdProducto">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdProducto">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

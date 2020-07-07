@@ -1,0 +1,48 @@
+﻿@model WMSWeb.Models.Almacen
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Almacen</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NomAlmacen)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NomAlmacen)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Representante)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Representante)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ciudad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ciudad)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Fono)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Fono)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CodAlmacen">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

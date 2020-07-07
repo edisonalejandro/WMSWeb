@@ -1,12 +1,11 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace WMSWeb.Models
 {
     public partial class ESSENTIALWMSContext : DbContext
     {
         public ESSENTIALWMSContext()
+            : base()
         {
         }
 
@@ -50,6 +49,16 @@ namespace WMSWeb.Models
         public virtual DbSet<VeSisParametros> VeSisParametros { get; set; }
         public virtual DbSet<VeSisPerfilesUsuario> VeSisPerfilesUsuario { get; set; }
         public virtual DbSet<ZonaUbicacion> ZonaUbicacion { get; set; }
+
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer("Server=EAR-01\\MSSQL;Database=ESSENTIALWMS_DEV;Trusted_Connection=True;");
+            }
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

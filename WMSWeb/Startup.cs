@@ -1,14 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace WMSWeb
 {
@@ -27,9 +23,24 @@ namespace WMSWeb
 
             services.AddDbContext<Models.ESSENTIALWMSContext>(options =>
                options.UseSqlServer(
-                   Configuration.GetConnectionString("DefaultConnection")));
+                   Configuration.GetConnectionString("DefaultConnection"))
+                   .EnableSensitiveDataLogging(true)
+                   .UseLoggerFactory(MyloggerFactory)
+               );
+
             services.AddControllersWithViews();
         }
+
+        // Método que permite realizar guardado de acciones de los procesos para verificar posibles errores
+        public static readonly ILoggerFactory MyloggerFactory = LoggerFactory.Create(builder =>
+        {
+            builder
+                .AddFilter((category, level) =>
+                category == DbLoggerCategory.Database.Command.Name
+                && level == LogLevel.Information)
+                .AddConsole();
+        });
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -55,7 +66,7 @@ namespace WMSWeb
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Login}/{action=Index}/{id?}");
             });
         }
     }

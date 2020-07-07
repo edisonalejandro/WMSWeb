@@ -1,5 +1,3 @@
-using System;
-
 namespace WMSWeb.Models
 {
     public class ErrorViewModel
